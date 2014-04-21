@@ -1,22 +1,25 @@
-## Put comments here that give an overall description of what your
-## functions do
+##The below functions calculates and prints an inverse of a matrix from a cache. Incase the inverse is not yet calculated for a given matrix it is calculated, stored in the cache and printed out.
 
-## Write a short comment describing this function
+
 ###This function creates the special vector which is a list of 4 functions set,get,setinverse and getinverse.
 ###In case trying to implement first run this function to create at special vector. Input to this function should be a inversible square matrix.
 makeCacheMatrix <- function(x = matrix())
 {
     inverse <- NULL
+    ##Function 1
     set <- function(y) 
     {
         x <<- y
         inverse <<- NULL
     }
+    ##Function 2
     get <- function() {x}
+    ##Function 3
     setinverse <- function() 
     {
         inverse <<- solve(x)
     }
+    ##Function 4
     getinverse <- function() {inverse}
     
     list(set = set, get = get,
@@ -25,7 +28,6 @@ makeCacheMatrix <- function(x = matrix())
 }
 
 
-## Write a short comment describing this function
 ###This function first checks whether there is a special vector. If the above function is not executed correctly before executing this function an error will be thrown.
 ###This function further checks whether the inverse for the special vector is already calculated. If yes then it just access the cache to print the value. If no then it calculates the inverse using solve() function and prints the value.
 
